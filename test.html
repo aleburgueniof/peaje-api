@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Test Velvet Pay</title>
+</head>
+<body style="font-family: Arial; text-align: center; margin-top: 50px;">
+    <h2>Probando Velvet Pay</h2>
+    <button onclick="probarPago()" style="padding: 15px 30px; font-size: 16px; cursor: pointer;">Simular Transacción de 100 USDT</button>
+    <pre id="resultado" style="margin-top: 20px; font-weight: bold;"></pre>
+
+    <script>
+        async function probarPago() {
+            document.getElementById('resultado').innerText = "Enviando transacción...";
+            try {
+                let respuesta = await fetch('https://velvet-pay.onrender.com/api/v1/enrocar-transaccion', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ monto: 100, usuario: "test" })
+                });
+                let datos = await respuesta.json();
+                document.getElementById('resultado').innerText = "¡ÉXITO!\n" + JSON.stringify(datos, null, 2);
+            } catch (error) {
+                document.getElementById('resultado').innerText = "Error: " + error;
+            }
+        }
+    </script>
+</body>
+</html><!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Test Velvet Pay</title>
+</head>
+<body style="font-family: Arial; text-align: center; margin-top: 50px;">
+    <h2>Probando Velvet Pay</h2>
+    <button onclick="probarPago()" style="padding: 15px 30px; font-size: 16px; cursor: pointer;">Simular Transacción de 100 USDT</button>
+    <pre id="resultado" style="margin-top: 20px; font-weight: bold;"></pre>
+
+    <script>
+        async function probarPago() {
+            document.getElementById('resultado').innerText = "Enviando transacción...";
+            try {
+                let respuesta = await fetch('https://velvet-pay.onrender.com/api/v1/enrocar-transaccion', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ monto: 100, usuario: "test" })
+                });
+                let datos = await respuesta.json();
+                document.getElementById('resultado').innerText = "¡ÉXITO!\n" + JSON.stringify(datos, null, 2);
+            } catch (error) {
+                document.getElementById('resultado').innerText = "Error: " + error;
+            }
+        }
+    </script>
+</body>
+</html>

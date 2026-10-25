@@ -1,9 +1,10 @@
 import express from 'express';
+import cors from 'cors';
 import { parseUnits } from 'ethers';
 
 const app = express();
 app.use(express.json());
-
+app.use(cors());
 // CONFIGURACIÓN DE TU BILLETERA DE COBRO (Tu MetaMask)
 const MI_BILLETERA_METAMASK = "0x64c721C260DFBB09B66155f690FE6c1aB38B0603"; 
 
@@ -79,4 +80,3 @@ app.listen(PUERTO, () => {
     console.log(` Billetera de Cobro: ${MI_BILLETERA_METAMASK}`);
     console.log(` Porcentaje de Peaje: ${PORCENTAJE_FEE * 100}%`);
     console.log("==================================================");
-});

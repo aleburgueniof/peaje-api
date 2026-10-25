@@ -19,7 +19,7 @@
                     body: JSON.stringify({ monto: 100, usuario: "test" })
                 });
                 let datos = await respuesta.json();
-                document.getElementById('resultado').innerText = "¡ÉXITO!\n" + JSON.stringify(datos, null, 2);
+                document.getElementById('resultado').innerText = "ÉXITO!\n" + JSON.stringify(datos, null, 2);
             } catch (error) {
                 document.getElementById('resultado').innerText = "Error: " + error;
             }

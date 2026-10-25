@@ -1,0 +1,14 @@
+{
+  "name": "peaje-api-invisible",
+  "version": "1.0.0",
+  "description": "API de Peaje para Enrutamiento de Transacciones con Fee Automatico",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.19.2",
+    "ethers": "^6.13.0"
+  }
+}
